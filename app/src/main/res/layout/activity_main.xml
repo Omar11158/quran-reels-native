@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/ink_950" android:layoutDirection="rtl">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+        <TextView android:id="@+id/tvGreeting" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="السلام عليكم" android:textColor="@color/mist_400" android:textSize="14sp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="أنشئ ريلك القرآني" android:textColor="@color/mist_100" android:textSize="28sp" android:textStyle="bold" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="تلاوة، خلفية، وآيات متزامنة في دقائق" android:textColor="@color/mist_400" android:textSize="15sp" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="270dp" android:layout_marginTop="20dp" android:background="@drawable/bg_preview" android:gravity="center" android:orientation="vertical" android:padding="20dp">
+            <TextView android:id="@+id/tvPreviewBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="معاينة الريل" android:textColor="@color/gold_400" android:textSize="13sp" />
+            <TextView android:id="@+id/tvPreviewVerse" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:gravity="center" android:text="إِنَّ مَعَ الْعُسْرِ يُسْرًا" android:textColor="@color/mist_100" android:textSize="24sp" android:textStyle="bold" />
+            <TextView android:id="@+id/tvPreviewMeta" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="سورة الشرح · الآية ٦" android:textColor="@color/mist_400" android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:text="خطوات سريعة" android:textColor="@color/mist_100" android:textSize="19sp" android:textStyle="bold" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnRecitation" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="١  ·  اختر التلاوة والآيات" android:textColor="@color/mist_100" app:strokeColor="@color/emerald_700" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnBackground" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="٢  ·  اختر الخلفية" android:textColor="@color/mist_100" app:strokeColor="@color/emerald_700" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnCustomize" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="٣  ·  خصص النص والقالب" android:textColor="@color/mist_100" app:strokeColor="@color/emerald_700" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnExport" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="إنشاء ومعاينة الريل" android:textColor="@color/ink_950" android:textStyle="bold" app:backgroundTint="@color/emerald_500" />
+        <TextView android:id="@+id/tvStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:gravity="center" android:text="جاهز للبدء" android:textColor="@color/mist_400" android:textSize="13sp" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="32dp" android:text="مبادئ التصميم" android:textColor="@color/gold_400" android:textSize="13sp" android:textStyle="bold" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="تجربة هادئة، واضحة، وتحترم قدسية المحتوى. لا يحتاج اختيارك إلى اتصال دائم بالإنترنت." android:textColor="@color/mist_400" android:textSize="14sp" />
+    </LinearLayout>
+</ScrollView>

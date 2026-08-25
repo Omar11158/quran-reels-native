@@ -1,0 +1,28 @@
+workflows:
+  android-release:
+    name: Quran Reels Android Release
+    max_build_duration: 30
+    instance_type: mac_mini_m2
+    environment:
+      java: 17
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+          source: true
+    scripts:
+      - name: Build release APK
+        script: |
+          chmod +x ./gradlew
+          ./gradlew assembleRelease
+    artifacts:
+      - app/build/outputs/apk/release/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - $CM_EMAIL
+        notify:
+          success: true
+          failure: true

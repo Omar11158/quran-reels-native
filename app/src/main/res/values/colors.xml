@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ink_950">#0A0F0D</color>
+    <color name="ink_900">#111916</color>
+    <color name="ink_800">#18231F</color>
+    <color name="emerald_500">#20C98B</color>
+    <color name="emerald_700">#087A58</color>
+    <color name="gold_400">#D8B66A</color>
+    <color name="mist_100">#F2F6F3</color>
+    <color name="mist_400">#AAB8B1</color>
+    <color name="danger_400">#FF9B82</color>
+</resources>
