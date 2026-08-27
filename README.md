@@ -20,6 +20,6 @@
 
 ## توقيع APK
 
-يستخدم `release` مفتاح Codemagic الحقيقي تلقائياً عند توفير متغيرات `CM_KEYSTORE_PATH` و`CM_KEYSTORE_PASSWORD` و`CM_KEY_ALIAS` و`CM_KEY_PASSWORD`. إذا لم تُضف keystore بعد، يستخدم البناء fallback إلى debug keystore حتى يكون APK قابلاً للتثبيت للاختبار فقط. لا تستخدم هذا fallback للنشر على Google Play؛ أضف keystore إنتاجياً في Codemagic واحتفظ به سرياً.
+يستخدم `release` مفتاح Codemagic الحقيقي تلقائياً عند توفير متغيرات `CM_KEYSTORE_PATH` و`CM_KEYSTORE_PASSWORD` و`CM_KEY_ALIAS` و`CM_KEY_PASSWORD`. إذا لم تُضف keystore بعد، ينشئ workflow keystore اختبارياً مؤقتاً داخل بيئة Codemagic حتى يكون APK قابلاً للتثبيت للاختبار فقط. لا تستخدم هذا المفتاح للنشر على Google Play؛ أضف keystore إنتاجياً في Codemagic واحتفظ به سرياً.
 
 بعد البناء، يتحقق workflow من توقيع APK باستخدام `apksigner`. إذا كان الهاتف يحتوي على نسخة سابقة من التطبيق موقّعة بمفتاح مختلف، احذف النسخة السابقة أولاً ثم ثبّت APK الجديد.

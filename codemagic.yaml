@@ -19,6 +19,23 @@ workflows:
       - name: Build release APK
         script: |
           chmod +x ./gradlew
+          if [ -z "${CM_KEYSTORE_PATH:-}" ]; then
+            CI_KEYSTORE="$CM_BUILD_DIR/ci-testing.keystore"
+            keytool -genkeypair -v \
+              -keystore "$CI_KEYSTORE" \
+              -storepass quranreels-ci \
+              -keypass quranreels-ci \
+              -alias quranreels-ci \
+              -keyalg RSA -keysize 2048 -validity 10000 \
+              -dname "CN=Quran Reels CI, OU=Build, O=Quran Reels, L=NA, ST=NA, C=US"
+            export CM_KEYSTORE_PATH="$CI_KEYSTORE"
+            export CM_KEYSTORE_PASSWORD="quranreels-ci"
+            export CM_KEY_ALIAS="quranreels-ci"
+            export CM_KEY_PASSWORD="quranreels-ci"
+            echo "Using temporary CI signing key for this test build."
+          else
+            echo "Using Codemagic production keystore."
+          fi
           ./gradlew --no-daemon --stacktrace assembleRelease
           echo "Generated APK files:"
           find app/build/outputs -type f -name "*.apk" -print
