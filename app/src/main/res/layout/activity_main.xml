@@ -1,73 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical" android:background="@color/ink_950" android:layoutDirection="rtl">
+    android:background="@color/ink_950" android:layoutDirection="rtl">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingStart="20dp" android:paddingTop="14dp" android:paddingEnd="16dp" android:paddingBottom="12dp">
-        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ريلز قرآني" android:textColor="@color/mist_100" android:textSize="20sp" android:textStyle="bold" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="أنشئ وشارك بدون تعقيد" android:textColor="@color/mist_400" android:textSize="12sp" />
+    <LinearLayout android:id="@+id/startScreen" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="18dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ريلز قرآني" android:textColor="@color/mist_100" android:textSize="20sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="استوديو المعنى" android:textColor="@color/mist_400" android:textSize="12sp" />
+            </LinearLayout>
+            <TextView android:layout_width="42dp" android:layout_height="42dp" android:background="@drawable/bg_logo" android:gravity="center" android:text="ق" android:textColor="@color/gold_400" android:textSize="22sp" android:textStyle="bold" />
         </LinearLayout>
-        <TextView android:layout_width="42dp" android:layout_height="42dp" android:background="@drawable/bg_logo" android:gravity="center" android:text="ق" android:textColor="@color/gold_400" android:textSize="22sp" android:textStyle="bold" />
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="14dp" android:background="#252032" />
+        <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingTop="28dp" android:paddingBottom="24dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_badge" android:paddingStart="10dp" android:paddingTop="6dp" android:paddingEnd="10dp" android:paddingBottom="6dp" android:text="المرحلة 1 من 4" android:textColor="@color/emerald_500" android:textSize="11sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="قرار البداية" android:textColor="@color/gold_400" android:textSize="13sp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="ما نوع المقطع الذي تريد إنشاءه؟" android:textColor="@color/mist_100" android:textSize="27sp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="اختر نوع الريلز أولاً، وسيفتح لك التطبيق خطوات بسيطة ومناسبة لهذا النوع فقط." android:textColor="@color/mist_400" android:textSize="14sp" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:orientation="horizontal">
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/cardTilawa" android:layout_width="0dp" android:layout_height="185dp" android:layout_marginEnd="6dp" android:layout_weight="1" android:clickable="true" android:focusable="true" app:cardBackgroundColor="@color/ink_800" app:cardCornerRadius="18dp" app:strokeColor="@color/purple_600" app:strokeWidth="1dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="bottom" android:orientation="vertical" android:padding="15dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="٠١" android:textColor="@color/gold_400" android:textSize="12sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="تلاوة" android:textColor="@color/emerald_500" android:textSize="12sp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="إنشاء مقطع ريلز قرآني" android:textColor="@color/mist_100" android:textSize="17sp" android:textStyle="bold" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="تلاوة آيات بصوت قارئ تختاره" android:textColor="@color/mist_400" android:textSize="11sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="انتقل إلى اختيار القارئ  ‹" android:textColor="@color/gold_400" android:textSize="11sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/cardHadith" android:layout_width="0dp" android:layout_height="185dp" android:layout_marginStart="6dp" android:layout_weight="1" android:clickable="true" android:focusable="true" app:cardBackgroundColor="@color/ink_800" app:cardCornerRadius="18dp" app:strokeColor="@color/purple_600" app:strokeWidth="1dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="bottom" android:orientation="vertical" android:padding="15dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="٠٢" android:textColor="@color/gold_400" android:textSize="12sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="حديث" android:textColor="@color/emerald_500" android:textSize="12sp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="إنشاء مقطع ريلز حديث نبوي" android:textColor="@color/mist_100" android:textSize="16sp" android:textStyle="bold" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="حديث موثق بصوت من اختيارك" android:textColor="@color/mist_400" android:textSize="11sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="انتقل إلى اختيار الصوت  ‹" android:textColor="@color/gold_400" android:textSize="11sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/cardDuaa" android:layout_width="0dp" android:layout_height="185dp" android:layout_marginEnd="6dp" android:layout_weight="1" android:clickable="true" android:focusable="true" app:cardBackgroundColor="@color/ink_800" app:cardCornerRadius="18dp" app:strokeColor="@color/purple_600" app:strokeWidth="1dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="bottom" android:orientation="vertical" android:padding="15dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="٠٣" android:textColor="@color/gold_400" android:textSize="12sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="دعاء" android:textColor="@color/emerald_500" android:textSize="12sp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="إنشاء مقطع ريلز دعاء" android:textColor="@color/mist_100" android:textSize="17sp" android:textStyle="bold" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="دعاء مأثور بصوت وخلفية هادئة" android:textColor="@color/mist_400" android:textSize="11sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="انتقل إلى اختيار الصوت  ‹" android:textColor="@color/gold_400" android:textSize="11sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/cardMessage" android:layout_width="0dp" android:layout_height="185dp" android:layout_marginStart="6dp" android:layout_weight="1" android:clickable="true" android:focusable="true" app:cardBackgroundColor="@color/ink_800" app:cardCornerRadius="18dp" app:strokeColor="@color/purple_600" app:strokeWidth="1dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="bottom" android:orientation="vertical" android:padding="15dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="٠٤" android:textColor="@color/gold_400" android:textSize="12sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="رسالة" android:textColor="@color/emerald_500" android:textSize="12sp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="إنشاء مقطع ريلز ديني دعوي" android:textColor="@color/mist_100" android:textSize="16sp" android:textStyle="bold" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="رسالة هادفة بقوالب قابلة للتعديل" android:textColor="@color/mist_400" android:textSize="11sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="انتقل إلى القوالب والرسائل  ‹" android:textColor="@color/gold_400" android:textSize="11sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:gravity="center" android:text="يمكنك العودة واختيار نوع مقطع آخر في أي وقت؛ لن تفقد إعداداتك الحالية." android:textColor="@color/mist_400" android:textSize="12sp" />
+            </LinearLayout>
+        </ScrollView>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:paddingTop="10dp" android:paddingBottom="4dp" android:text="ريلز قرآني · استوديو مستقل لصناعة المقاطع" android:textColor="@color/mist_400" android:textSize="11sp" />
     </LinearLayout>
 
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#252032" />
-
-    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="إنشاء ريلز جديد" android:textColor="@color/mist_100" android:textSize="22sp" android:textStyle="bold" />
-                <TextView android:id="@+id/tvProjectBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_badge" android:paddingStart="10dp" android:paddingTop="6dp" android:paddingEnd="10dp" android:paddingBottom="6dp" android:text="مشروع جديد" android:textColor="@color/emerald_500" android:textSize="11sp" />
+    <LinearLayout android:id="@+id/workspaceScreen" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:visibility="gone">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="16dp" android:paddingBottom="10dp">
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnBackToTypes" style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="‹ رجوع" android:textColor="@color/mist_400" android:textSize="12sp" />
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                <TextView android:id="@+id/tvWorkspaceType" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="مسار تلاوة" android:textColor="@color/mist_100" android:textSize="18sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="مساحة عمل جديدة · حفظ تلقائي" android:textColor="@color/mist_400" android:textSize="10sp" />
             </LinearLayout>
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="اختر المحتوى، نسّق المشهد، ثم صدّر فيديو 9:16 جاهزاً للنشر." android:textColor="@color/mist_400" android:textSize="13sp" />
-
-            <LinearLayout android:layout_width="match_parent" android:layout_height="265dp" android:layout_marginTop="16dp" android:background="@drawable/bg_preview" android:gravity="center" android:orientation="vertical" android:padding="20dp">
-                <TextView android:id="@+id/tvPreviewBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="معاينة الريل · 9:16" android:textColor="@color/gold_400" android:textSize="12sp" />
-                <TextView android:id="@+id/tvPreviewVerse" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:gravity="center" android:text="إِنَّ مَعَ الْعُسْرِ يُسْرًا" android:textColor="@color/mist_100" android:textSize="25sp" android:textStyle="bold" />
-                <TextView android:id="@+id/tvPreviewMeta" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="سورة الشرح · الآية ٦" android:textColor="@color/mist_400" android:textSize="12sp" />
-                <View android:layout_width="120dp" android:layout_height="3dp" android:layout_marginTop="20dp" android:background="@color/emerald_500" />
+            <TextView android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_logo" android:gravity="center" android:text="ق" android:textColor="@color/gold_400" android:textSize="18sp" />
+        </LinearLayout>
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#252032" />
+        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollbars="none">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="12dp" android:paddingTop="10dp" android:paddingEnd="12dp" android:paddingBottom="10dp">
+                <TextView android:id="@+id/step1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_badge" android:padding="9dp" android:text="01 القارئ" android:textColor="@color/emerald_500" android:textSize="11sp" />
+                <TextView android:id="@+id/step2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:padding="9dp" android:text="02 السورة والآيات" android:textColor="@color/mist_400" android:textSize="11sp" />
+                <TextView android:id="@+id/step3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:padding="9dp" android:text="03 الخلفية" android:textColor="@color/mist_400" android:textSize="11sp" />
+                <TextView android:id="@+id/step4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:padding="9dp" android:text="04 النغمة" android:textColor="@color/mist_400" android:textSize="11sp" />
+                <TextView android:id="@+id/step5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:padding="9dp" android:text="05 النص والحركة" android:textColor="@color/mist_400" android:textSize="11sp" />
+                <TextView android:id="@+id/step6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:padding="9dp" android:text="06 المؤثرات" android:textColor="@color/mist_400" android:textSize="11sp" />
+                <TextView android:id="@+id/step7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:padding="9dp" android:text="07 العلامة" android:textColor="@color/mist_400" android:textSize="11sp" />
+                <TextView android:id="@+id/step8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:padding="9dp" android:text="08 المراجعة" android:textColor="@color/mist_400" android:textSize="11sp" />
+                <TextView android:id="@+id/step9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:padding="9dp" android:text="09 التصدير" android:textColor="@color/mist_400" android:textSize="11sp" />
             </LinearLayout>
+        </HorizontalScrollView>
+        <ProgressBar android:id="@+id/progressBar" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="3dp" android:max="100" android:progress="11" android:progressTint="@color/emerald_500" android:secondaryProgressTint="@color/purple_600" />
+        <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="فكرة اليوم · المقاطع الأقصر تترك مساحة أكبر للتدبر." android:textColor="@color/gold_400" android:textSize="11sp" />
+                <TextView android:id="@+id/tvStepKicker" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="01 / 09 · الصوت الأساسي" android:textColor="@color/emerald_500" android:textSize="12sp" />
+                <TextView android:id="@+id/tvEditorTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="اختر صوتاً يحمل الآية" android:textColor="@color/mist_100" android:textSize="25sp" android:textStyle="bold" />
+                <TextView android:id="@+id/tvEditorDescription" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="حدّد القارئ الذي تريد أن يقود إيقاع المقطع، ويمكنك البحث بالاسم أو الرواية." android:textColor="@color/mist_400" android:textSize="13sp" />
+                <EditText android:id="@+id/etReciterSearch" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="16dp" android:background="@drawable/bg_search" android:hint="ابحث عن قارئ أو رواية..." android:inputType="text" android:paddingStart="16dp" android:paddingEnd="16dp" android:textColor="@color/mist_100" android:textColorHint="@color/mist_400" android:textSize="13sp" />
+                <TextView android:id="@+id/tvReciterCount" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="القراء المتاحون · 6 أصوات جاهزة" android:textColor="@color/mist_100" android:textSize="13sp" android:textStyle="bold" />
+                <LinearLayout android:id="@+id/reciterPanel" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnReciterMishary" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:gravity="start|center_vertical" android:text="م  مشاري العفاسي · 128kbps · الأكثر اختياراً" android:textColor="@color/mist_100" android:textSize="12sp" app:strokeColor="@color/purple_600" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnReciterBasit" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="start|center_vertical" android:text="ع  عبدالباسط عبدالصمد · 192kbps · مرتل" android:textColor="@color/mist_100" android:textSize="12sp" app:strokeColor="@color/purple_600" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnReciterMinshawy" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="start|center_vertical" android:text="م  محمد صديق المنشاوي · 128kbps · مرتل" android:textColor="@color/mist_100" android:textSize="12sp" app:strokeColor="@color/purple_600" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnReciterHusary" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="start|center_vertical" android:text="م  محمود خليل الحصري · 128kbps · معلم" android:textColor="@color/mist_100" android:textSize="12sp" app:strokeColor="@color/purple_600" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnReciterDosari" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="start|center_vertical" android:text="ي  ياسر الدوسري · 128kbps · مرتل" android:textColor="@color/mist_100" android:textSize="12sp" app:strokeColor="@color/purple_600" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnReciterMuaiqly" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="start|center_vertical" android:text="م  ماهر المعيقلي · 128kbps · مرتل" android:textColor="@color/mist_100" android:textSize="12sp" app:strokeColor="@color/purple_600" />
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="يظهر اسم القارئ تلقائياً في بطاقة المعاينة ويمكن التحكم به من خطوة العلامة." android:textColor="@color/mist_400" android:textSize="11sp" />
 
-            <VideoView android:id="@+id/videoPreview" android:layout_width="match_parent" android:layout_height="420dp" android:layout_marginTop="12dp" android:background="@color/ink_900" android:visibility="gone" />
+                <LinearLayout android:id="@+id/editorActions" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:orientation="vertical">
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnRecitation" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="١  ·  اختر السورة والآيات" android:textColor="@color/mist_100" android:textSize="12sp" app:strokeColor="@color/purple_600" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnAudio" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:text="٢  ·  أضف التلاوة الصوتية" android:textColor="@color/mist_100" android:textSize="12sp" app:strokeColor="@color/purple_600" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnBackground" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:text="٣  ·  اختر الخلفية" android:textColor="@color/mist_100" android:textSize="12sp" app:strokeColor="@color/purple_600" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnCustomize" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:text="٤  ·  خصص النص والقالب" android:textColor="@color/mist_100" android:textSize="12sp" app:strokeColor="@color/purple_600" />
+                </LinearLayout>
 
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:text="مسار الإنشاء" android:textColor="@color/mist_100" android:textSize="17sp" android:textStyle="bold" />
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="vertical">
-                <com.google.android.material.button.MaterialButton android:id="@+id/btnRecitation" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="١  ·  اختر السورة والقارئ" android:textColor="@color/mist_100" android:textSize="13sp" app:strokeColor="@color/purple_600" />
-                <com.google.android.material.button.MaterialButton android:id="@+id/btnAudio" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="٢  ·  أضف التلاوة الصوتية" android:textColor="@color/mist_100" android:textSize="13sp" app:strokeColor="@color/purple_600" />
-                <com.google.android.material.button.MaterialButton android:id="@+id/btnBackground" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="٣  ·  اختر الخلفية" android:textColor="@color/mist_100" android:textSize="13sp" app:strokeColor="@color/purple_600" />
-                <com.google.android.material.button.MaterialButton android:id="@+id/btnCustomize" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="٤  ·  خصص القالب والنص" android:textColor="@color/mist_100" android:textSize="13sp" app:strokeColor="@color/purple_600" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:gravity="center_vertical">
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnPrevStep" style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="‹ السابق" android:textColor="@color/mist_400" android:textSize="12sp" />
+                    <TextView android:id="@+id/tvStepProgress" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="المرحلة 1 من 9" android:textColor="@color/mist_400" android:textSize="11sp" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnNextStep" style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="التالي ›" android:textColor="@color/gold_400" android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="المعاينة الحية" android:textColor="@color/mist_100" android:textSize="17sp" android:textStyle="bold" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="270dp" android:layout_marginTop="10dp" android:background="@drawable/bg_preview" android:gravity="center" android:orientation="vertical" android:padding="18dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="هكذا سيظهر المقطع" android:textColor="@color/gold_400" android:textSize="12sp" />
+                    <TextView android:id="@+id/tvPreviewVerse" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:gravity="center" android:text="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ" android:textColor="@color/mist_100" android:textSize="23sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/tvPreviewMeta" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:gravity="center" android:text="مشاري العفاسي · سورة يوسف · 1080p" android:textColor="@color/mist_400" android:textSize="11sp" />
+                    <TextView android:id="@+id/tvPreviewBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="رسالة اليوم · قالب نسيم الفجر" android:textColor="@color/emerald_500" android:textSize="11sp" />
+                </LinearLayout>
+                <VideoView android:id="@+id/videoPreview" android:layout_width="match_parent" android:layout_height="420dp" android:layout_marginTop="12dp" android:background="@color/ink_900" android:visibility="gone" />
+                <TextView android:id="@+id/tvStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="center" android:text="جاهز للبدء" android:textColor="@color/mist_400" android:textSize="11sp" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnExport" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="إنتاج الفيديو ومشاركته" android:textColor="@color/ink_950" android:textSize="13sp" android:textStyle="bold" app:backgroundTint="@color/emerald_500" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:layout_marginBottom="24dp" android:gravity="center" android:text="كل اختيار هنا ينعكس على المعاينة · جودة 1080p · مقاس 9:16" android:textColor="@color/mist_400" android:textSize="11sp" />
             </LinearLayout>
-
-            <com.google.android.material.button.MaterialButton android:id="@+id/btnExport" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="إنتاج الفيديو ومشاركته" android:textColor="@color/ink_950" android:textSize="14sp" android:textStyle="bold" app:backgroundTint="@color/emerald_500" />
-            <TextView android:id="@+id/tvStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:gravity="center" android:text="جاهز لإنتاج فيديو MP4" android:textColor="@color/mist_400" android:textSize="12sp" />
-
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="قوالب مقترحة" android:textColor="@color/mist_100" android:textSize="17sp" android:textStyle="bold" />
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
-                <TextView android:layout_width="0dp" android:layout_height="66dp" android:layout_marginEnd="6dp" android:layout_weight="1" android:background="@drawable/bg_template_one" android:gravity="center" android:text="نور الفجر" android:textColor="@color/mist_100" android:textSize="12sp" />
-                <TextView android:layout_width="0dp" android:layout_height="66dp" android:layout_marginStart="3dp" android:layout_marginEnd="3dp" android:layout_weight="1" android:background="@drawable/bg_template_two" android:gravity="center" android:text="سكينة" android:textColor="@color/mist_100" android:textSize="12sp" />
-                <TextView android:layout_width="0dp" android:layout_height="66dp" android:layout_marginStart="6dp" android:layout_weight="1" android:background="@drawable/bg_template_three" android:gravity="center" android:text="آية اليوم" android:textColor="@color/mist_100" android:textSize="12sp" />
-            </LinearLayout>
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:layout_marginBottom="20dp" android:text="التصميم مستوحى من تدفق تطبيقات صناعة الريلز القرآنية: معاينة، اختيار المحتوى، الخلفية، التخصيص، ثم التصدير — من دون نسخ العلامة التجارية أو الأصول." android:textColor="@color/mist_400" android:textSize="12sp" />
-        </LinearLayout>
-    </ScrollView>
-
-    <LinearLayout android:layout_width="match_parent" android:layout_height="70dp" android:background="@color/ink_900" android:gravity="center" android:orientation="horizontal" android:paddingTop="7dp" android:paddingBottom="5dp">
-        <LinearLayout android:id="@+id/navHome" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⌂" android:textColor="@color/emerald_500" android:textSize="24sp" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="الرئيسية" android:textColor="@color/emerald_500" android:textSize="11sp" />
-        </LinearLayout>
-        <LinearLayout android:id="@+id/navProjects" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▦" android:textColor="@color/mist_400" android:textSize="22sp" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="المشاريع" android:textColor="@color/mist_400" android:textSize="11sp" />
-        </LinearLayout>
-        <LinearLayout android:id="@+id/navBackgrounds" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="◈" android:textColor="@color/mist_400" android:textSize="22sp" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="الخلفيات" android:textColor="@color/mist_400" android:textSize="11sp" />
-        </LinearLayout>
-        <LinearLayout android:id="@+id/navSettings" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚙" android:textColor="@color/mist_400" android:textSize="22sp" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="الإعدادات" android:textColor="@color/mist_400" android:textSize="11sp" />
-        </LinearLayout>
+        </ScrollView>
     </LinearLayout>
-</LinearLayout>
+</FrameLayout>
