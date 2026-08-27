@@ -20,5 +20,8 @@ workflows:
         script: |
           chmod +x ./gradlew
           ./gradlew --no-daemon --stacktrace assembleRelease
+          echo "Generated APK files:"
+          find app/build/outputs -type f -name "*.apk" -print
+          test -n "$(find app/build/outputs -type f -name "*.apk" -print -quit)"
     artifacts:
-      - app/build/outputs/apk/release/app-release.apk
+      - app/build/outputs/**/*.apk
