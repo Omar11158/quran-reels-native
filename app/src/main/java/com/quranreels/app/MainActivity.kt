@@ -51,6 +51,12 @@ class MainActivity : AppCompatActivity() {
         binding.btnBackground.setOnClickListener { showBackgroundDialog() }
         binding.btnCustomize.setOnClickListener { showCustomizeDialog() }
         binding.btnExport.setOnClickListener { exportAndShareReel() }
+        binding.navHome.setOnClickListener { binding.tvStatus.text = "الرئيسية · مشروع ريلز جديد" }
+        binding.navProjects.setOnClickListener { binding.tvStatus.text = "المشاريع · ستظهر هنا الريلز المحفوظة" }
+        binding.navBackgrounds.setOnClickListener { showBackgroundDialog() }
+        binding.navSettings.setOnClickListener {
+            Toast.makeText(this, "الإعدادات: جودة 720×1280 وتصدير MP4", Toast.LENGTH_SHORT).show()
+        }
         binding.videoPreview.setOnPreparedListener { player ->
             player.isLooping = true
             binding.videoPreview.start()
