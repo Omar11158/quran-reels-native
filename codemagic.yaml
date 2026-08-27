@@ -22,6 +22,11 @@ workflows:
           ./gradlew --no-daemon --stacktrace assembleRelease
           echo "Generated APK files:"
           find app/build/outputs -type f -name "*.apk" -print
-          test -n "$(find app/build/outputs -type f -name "*.apk" -print -quit)"
+          APK_PATH="$(find app/build/outputs -type f -name "*.apk" -print -quit)"
+          test -n "$APK_PATH"
+          APKSIGNER="$(find "$ANDROID_SDK_ROOT/build-tools" -type f -name apksigner -print | sort -V | tail -n 1)"
+          if [ -n "$APKSIGNER" ]; then
+            "$APKSIGNER" verify --verbose "$APK_PATH"
+          fi
     artifacts:
       - app/build/outputs/**/*.apk
