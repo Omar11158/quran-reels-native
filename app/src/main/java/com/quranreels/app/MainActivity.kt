@@ -15,6 +15,7 @@ import java.util.concurrent.Executors
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private val fileProviderAuthority = "com.quranreels.app.fileprovider"
     private val exportExecutor = Executors.newSingleThreadExecutor()
     private var selectedReciter = "مشاري راشد العفاسي"
     private var selectedSurah = "سورة الشرح · الآيات 1–8"
@@ -140,7 +141,7 @@ class MainActivity : AppCompatActivity() {
                         runOnUiThread { binding.tvStatus.text = "جارٍ إنتاج فيديو MP4 عمودي… $progress%" }
                     }
                 )
-                val uri = FileProvider.getUriForFile(this, "${BuildConfig.APPLICATION_ID}.fileprovider", output)
+                val uri = FileProvider.getUriForFile(this, fileProviderAuthority, output)
                 runOnUiThread {
                     binding.btnExport.isEnabled = true
                     binding.videoPreview.visibility = View.VISIBLE
